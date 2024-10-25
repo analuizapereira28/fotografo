@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Fotografia</title>
+    <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header>
+    <h1>Lucas de Almeida Fotografia</h1>
+    <div class="camera">
+        <img src="assets/img/camera.png" alt="fotos">
+    </div>
+    <nav>
+        <a href="#biografia">Biografia</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="texto">
+        <h2>Biografia</h2>
+        <h1>Nome:</h1>
+        <p>Lucas de Almeida</p>
+        <h1>Experiência:</h1>
+        <p>15 anos como fotógrafo</p>
+        <h1>Local de Nascimento:</h1>
+        <p>Belo Horizonte, MG</p>
+        <h1>Especializações:</h1>
+        <p>Retrato e eventos (casamentos, aniversários).</p>
+        <h1>Idade:</h1>
+        <p>35 anos</p>
+    </div>
+    <div class="lucas">
+        <img src="assets/img/lucas2.jpg" alt="foto de Lucas" id="imagemLucas" style="cursor: pointer;">
+        <div class="descricao" id="descricaoLucas">
+            Lucas é um fotógrafo apaixonado por capturar momentos especiais.
+        </div>
+    </div>
+</div>
+
+<h3>Meu Trabalho:</h3>
+<div class="portfolio">
+    <div>
+        <img src="assets/img/aniversario.jpg" alt="fotos" class="portfolio-img" data-descricao="Festa de aniversário emocionante.">
+        <div class="descricao"></div>
+    </div>
+    <div>
+        <img src="assets/img/aniversario2.jpg" alt="fotos" class="portfolio-img" data-descricao="Momentos felizes com amigos.">
+        <div class="descricao"></div>
+    </div>
+    <div>
+        <img src="assets/img/casamento.jpg" alt="fotos" class="portfolio-img" data-descricao="Um dia inesquecível de casamento.">
+        <div class="descricao"></div>
+    </div>
+    <div>
+        <img src="assets/img/casamento2.jpg" alt="fotos" class="portfolio-img" data-descricao="Cerimônia cheia de amor.">
+        <div class="descricao"></div>
+    </div>
+    <div>
+        <img src="assets/img/casamento3.jpg" alt="fotos" class="portfolio-img" data-descricao="Retratos do casal feliz.">
+        <div class="descricao"></div>
+    </div>
+    <div>
+        <img src="assets/img/casamento4.jpeg" alt="fotos" class="portfolio-img" data-descricao="Celebrando o amor com estilo.">
+        <div class="descricao"></div>
+    </div>
+</div>
+
+<div class="premios">
+    <p>Prêmios e Reconhecimento</p>
+    <img src="assets/img/premios-removebg-preview.png" alt="premios">
+</div>
+
+<footer>
+    Meu Site - Todos os direitos reservados.
+</footer>
+
+<script>
+    document.getElementById("imagemLucas").addEventListener("click", function() {
+        var descricao = document.getElementById("descricaoLucas");
+        descricao.style.display = descricao.style.display === "none" ? "block" : "none";
+    });
+
+    var portfolioImages = document.querySelectorAll('.portfolio-img');
+    portfolioImages.forEach(function(img) {
+        img.addEventListener("click", function() {
+            var descricao = img.getAttribute('data-descricao');
+            var descricaoDiv = img.nextElementSibling;
+            descricaoDiv.textContent = descricao;
+            descricaoDiv.style.display = "block"; 
+        });
+    });
+</script>
+
+</body>
+</html>
